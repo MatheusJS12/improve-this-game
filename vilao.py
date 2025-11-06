@@ -1,4 +1,5 @@
 from personagem import Personagem  # Importa a classe Personagem
+import random
 
 class Vilao(Personagem):
     """

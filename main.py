@@ -1,5 +1,6 @@
 from personagem import Personagem
 from vilao import Vilao
+import random
 
 def main():
     # Criando personagens e vilões
