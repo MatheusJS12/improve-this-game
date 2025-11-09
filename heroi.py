@@ -7,4 +7,3 @@ class Heroi(Personagem):
         pass
     def ataque():
         pass
-    def 
