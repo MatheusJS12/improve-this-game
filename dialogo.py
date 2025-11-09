@@ -348,6 +348,7 @@ class Dialogos:
         cont = 0
         for i in texto_junto:
             print(i, end='')
+            Util.pausa(0.05)
             cont = cont + 1
             if cont % 120 == 0:
                 print('-\n')
@@ -363,6 +364,7 @@ class Dialogos:
         cont = 0
         for i in dialogo:
             print(i, end='')
+            Util.pausa(0.05)
             cont = cont + 1
         print('\n')
         Util.continuar()
