@@ -11,12 +11,16 @@ class Batalha:
     def atacar(self, atacante, defensor):
         dano = max(0, atacante.ataque - defensor.defesa)
         defensor.vida -= dano
+        if defensor.vida <= dano:
+            defensor.vida = 0
         print(f'{atacante.nome} ataca {defensor.nome} causando {dano} de dano! {defensor.nome} agora tem {defensor.vida} de vida.')
         Util.pausa(2)
 
     def atacar_sem_defesa(self, atacante, defensor):
         dano = atacante.ataque
         defensor.vida -= dano
+        if defensor.vida <= dano:
+            defensor.vida = 0
         print(f'{atacante.nome} ataca {defensor.nome} diretamente, causando {dano} de dano! {defensor.nome} agora tem {defensor.vida} de vida.')
         Util.pausa(2)
 
@@ -62,3 +66,12 @@ class Batalha:
         else:
             print(Fore.RED + 'Opção de poção inválida.' + Fore.RESET)
         Util.pausa(2)
+        def recuperar_estatos_completo(self, personagem):
+            personagem.vida = personagem.vidabase
+            personagem.ataque = personagem.ataquebase
+            personagem.defesa = personagem.defesabase
+            return personagem.defesa, personagem.ataque, personagem.vida
+        def repurar_estatos_posbatalha(self, personagem):
+            personagem.ataque = personagem.ataquebase
+            personagem.defesa = personagem.defesabase
+            return personagem.defesa, personagem.ataque

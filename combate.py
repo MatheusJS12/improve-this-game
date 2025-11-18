@@ -25,7 +25,7 @@ class Combate():
     def combate_pratico(self):
             turno = 1
             
-            while self.p1.vida > 0 and self.p2.vida > 0:
+            while self.p1.vida > 0 or self.p2.vida > 0:
                 
                 print(f'\n===== TURNO {turno} =====')
                 numero1 = 0
@@ -67,11 +67,11 @@ class Combate():
                         print(f'{self.p2.nome} defende enquanto {self.p1.nome} usa poção.')
                 
                 if self.p2.vida <= 0:
-                    self.p2.morrer()
+                    print(f'personagem{self.p2}foi derrotado')
                     break
                 
                 if self.p1.vida <= 0:
-                    self.p1.morrer()
+                    print(f'personagem{self.p1}foi derrotado')
                     break
                 
                 turno += 1
